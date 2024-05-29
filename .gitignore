@@ -1,0 +1,11 @@
+bin/
+obj/
+.idea/
+.editorconfig
+.vs/
+node_modules/
+.cache/
+dist/
+.env
+.DS_Store
+coverage/

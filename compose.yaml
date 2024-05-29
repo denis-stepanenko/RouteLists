@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./RouteListsAPI
+    environment:
+      - ConnectionStrings__DefaultConnectionString=Server = ; Database = ; User Id = ; Password = ; TrustServerCertificate = True; Command timeout = 60;
+    networks:
+      - app-net
+
+  frontend:
+    build:
+      context: ./route-lists-ui
+
+    ports:
+      - "80:80"
+    networks:
+      - app-net
+    depends_on: 
+      - backend
+
+networks:
+  app-net:
+    driver: bridge
